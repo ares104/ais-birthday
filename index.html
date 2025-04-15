@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Ulang Tahun, aisimup!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <style>
+    body {
+      background-color: #fce7f3;
+      background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.2) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+  </style>
+</head>
+<body class="text-gray-800 flex flex-col items-center justify-center min-h-screen p-6">
+  <div class="bg-white bg-opacity-80 p-6 rounded-2xl shadow-xl max-w-md w-full text-center">
+    <h1 class="text-3xl font-bold text-pink-600 mb-2">Selamat Ulang Tahun, aisimup!</h1>
+    <p class="text-sm mb-6 text-pink-800 italic">di sini</p>
+
+    <input id="namaInput" type="text" placeholder="Masukkan namamu"
+           class="border border-pink-300 p-2 rounded w-full mb-4" />
+
+    <button onclick="ikutMerayakan()" class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 w-full">
+      Ikut Merayakan
+    </button>
+
+    <h2 class="text-lg font-semibold mt-6 mb-2 text-pink-700">Yang sudah ikut:</h2>
+    <ul id="daftarUcapan" class="list-disc list-inside bg-white bg-opacity-60 p-4 rounded shadow text-left text-sm max-h-48 overflow-y-auto"></ul>
+
+    <p class="mt-4 text-xs text-pink-900" id="totalUcapan"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
