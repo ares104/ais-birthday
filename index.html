@@ -10,22 +10,24 @@
 
 
 <style>
-
-@keyframes shimmer {
-  0% {
-    background-position: -500px 0;
+@keyframes blinkStar {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px #f472b6, 
+      0 0 10px #f472b6, 
+      0 0 15px #f472b6;
   }
-  100% {
-    background-position: 500px 0;
+  50% {
+    text-shadow: 
+      0 0 2px #f472b6, 
+      0 0 4px #f9a8d4, 
+      0 0 6px #fbcfe8;
   }
 }
 
-.shimmer-text {
-  background: linear-gradient(90deg, #fff, #f9a8d4, #fff);
-  background-size: 1000px 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 3s infinite linear;
+.blink-star {
+  color: #f472b6; /* pink utama */
+  animation: blinkStar 1.5s infinite ease-in-out;
 }
   
   @font-face {
@@ -47,7 +49,7 @@
   
 <body class="text-gray-800 flex flex-col items-center justify-center min-h-screen p-6">
   <div class="bg-white bg-opacity-80 p-6 rounded-2xl shadow-xl max-w-md w-full text-center">
-    <h1 class="text-4xl font-bold shimmer-text">It's Ais birthday >V<!</h1>
+    <h1 class="text-4xl blink-star">It's Ais Birthday >v<!</h1>
     <p class="text-sm mb-6 text-pink-800 italic">di sini</p>
 
     <input id="namaInput" type="text" placeholder="Masukkan namamu"
