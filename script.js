@@ -28,7 +28,7 @@ function logDebug(message) {
 // Ambil dan tampilkan total ucapan saja
 db.ref("ucapan").on("value", (snapshot) => {
   const data = snapshot.val() || {};
-  logDebug("Data snapshot: " + JSON.stringify(data));
+  logDebug(" ");
   let count = Object.keys(data).length;
   total.textContent = `${count} orang sudah ikut merayakan!`;
 }, (error) => {
