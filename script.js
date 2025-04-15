@@ -23,9 +23,9 @@ const total = document.getElementById("totalUcapan");
 
 // Ambil dan tampilkan total ucapan saja
 db.ref("ucapan").on("value", (snapshot) => {
-  const data = snapshot.val() || {}; // jika data null, pakai objek kosong
-  const count = Object.keys(data).length;
-
-  console.log("Jumlah:", count); // console.log pindah ke sini
+  const data = snapshot.val() || {};
+  let count = Object.keys(data).length;
   total.textContent = `${count} orang sudah ikut merayakan!`;
+}, (error) => {
+  document.getElementById("debugLog").textContent = "Error: " + error.message;
 });
