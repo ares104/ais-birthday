@@ -20,16 +20,18 @@ function ikutMerayakan() {
   document.getElementById("namaInput").value = "";
 }
 
-const daftar = document.getElementById("daftarUcapan");
+//const daftar = document.getElementById("daftarUcapan");
 const total = document.getElementById("totalUcapan");
 
 db.ref("ucapan").on("value", (snapshot) => {
   const data = snapshot.val();
+  console.log("Jumlah:", count);
   let count = 0;
 
   for (let key in data) {
     count++;
   }
 
+  
   total.textContent = `${count} orang sudah ikut merayakan!`;
 });
