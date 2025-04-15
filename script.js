@@ -21,16 +21,14 @@ function ikutMerayakan() {
 
 const total = document.getElementById("totalUcapan");
 
-function logDebug(message) {
-  const logDiv = document.getElementById("debugLog");
-  logDiv.textContent += message + "\n";
-}
+
 // Ambil dan tampilkan total ucapan saja
 db.ref("ucapan").on("value", (snapshot) => {
   const data = snapshot.val() || {};
-  logDebug("Data snapshot: " + JSON.stringify(data));
   let count = Object.keys(data).length;
   total.textContent = `${count} orang sudah ikut merayakan!`;
-}, (error) => {
-  document.getElementById("debugLog").textContent = "Error: " + error.message;
-});
+}
+                    //(error) => {
+  //document.getElementById("debugLog").textContent = "Error: " + error.message;
+//}
+                   );
