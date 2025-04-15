@@ -1,4 +1,3 @@
-
 const firebaseConfig = {
   apiKey: "AIzaSyBJskSSOqeEwa4a-CwOvxtZjt6QEaiNQl0",
   authDomain: "ais-birthday.firebaseapp.com",
@@ -20,18 +19,13 @@ function ikutMerayakan() {
   document.getElementById("namaInput").value = "";
 }
 
-//const daftar = document.getElementById("daftarUcapan");
 const total = document.getElementById("totalUcapan");
 
+// Ambil dan tampilkan total ucapan saja
 db.ref("ucapan").on("value", (snapshot) => {
-  const data = snapshot.val();
-  console.log("Jumlah:", count);
-  let count = 0;
+  const data = snapshot.val() || {}; // jika data null, pakai objek kosong
+  const count = Object.keys(data).length;
 
-  for (let key in data) {
-    count++;
-  }
-
-  
+  console.log("Jumlah:", count); // console.log pindah ke sini
   total.textContent = `${count} orang sudah ikut merayakan!`;
 });
