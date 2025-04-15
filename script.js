@@ -25,13 +25,9 @@ const total = document.getElementById("totalUcapan");
 
 db.ref("ucapan").on("value", (snapshot) => {
   const data = snapshot.val();
-  daftar.innerHTML = "";
   let count = 0;
 
   for (let key in data) {
-    const li = document.createElement("li");
-    li.textContent = data[key];
-    daftar.appendChild(li);
     count++;
   }
 
