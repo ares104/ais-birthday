@@ -2,26 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fade to White Background</title>
+  <title>Scroll Background Fade</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       font-family: sans-serif;
       background: white;
+      overflow-x: hidden;
     }
 
     .wrapper {
       width: 100%;
+      position: relative;
     }
 
     .hero {
       position: relative;
       width: 100%;
-      aspect-ratio: 9 / 16; /* Foto 9:16 */
+      aspect-ratio: 9 / 16; /* Gambar 9:16 */
       background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
     }
 
     .hero::after {
@@ -30,21 +33,40 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 50%; /* Fade di setengah bawah */
+      height: 50%; /* Fade di bagian bawah */
       background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, white 100%);
     }
 
     .white-section {
       width: 100%;
-      aspect-ratio: 9 / 32; /* Setengah tinggi hero */
+      aspect-ratio: 9 / 64; /* Lebih pendek dari sebelumnya */
       background: white;
     }
 
     .content {
-      padding: 2rem;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+
+    .text-box {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 40px;
+      border-radius: 16px;
       max-width: 600px;
-      margin: 0 auto;
+    }
+
+    .spacer {
+      height: 100vh;
+      background: white;
     }
   </style>
 </head>
@@ -56,9 +78,13 @@
 </div>
 
 <div class="content">
-  <h1>Halo Ais!</h1>
-  <p>Ini adalah halaman dengan efek fade yang menyatu sempurna ke latar putih.</p>
+  <div class="text-box">
+    <h1>Selamat Ulang Tahun!</h1>
+    <p>Ini adalah halaman spesial dengan efek background fade yang elegan.</p>
+  </div>
 </div>
+
+<div class="spacer"></div>
 
 </body>
 </html>
