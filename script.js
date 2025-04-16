@@ -47,7 +47,7 @@ window.onload = () => {
     if (confetti.length > 0) {
       requestAnimationFrame(draw);
     } else {
-      canvas.remove();
+      canvas.parentNode.removeChild(canvas);
     }
   }
 
