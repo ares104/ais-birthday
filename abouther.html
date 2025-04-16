@@ -8,7 +8,7 @@
       margin: 0;
       padding: 0;
       font-family: sans-serif;
-      background: B0996F;
+      background: #B0996F;
       overflow-x: hidden;
     }
 
@@ -19,7 +19,7 @@
     .hero {
       position: relative;
       width: 100%;
-      aspect-ratio: 9 / 16; /* Gambar 9:16 */
+      aspect-ratio: 9 / 16;
       background-image: url('img/aiss.jpg');
       background-size: cover;
       background-position: center;
@@ -44,7 +44,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
+      text-align: left;
       pointer-events: none;
       z-index: 10;
       padding: 20px;
@@ -52,18 +52,45 @@
     }
 
     .text-box {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 40px;
-      border-radius: 16px;
-      max-width: 600px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 800px;
+      width: 100%;
       pointer-events: auto;
+      overflow-y: auto;
+      max-height: 90vh;
+      box-sizing: border-box;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 16px;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .paragraph {
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     .spacer {
       height: 40vh;
       background: #B0996F;
     }
-    
   </style>
 </head>
 <body>
@@ -74,11 +101,21 @@
 
 <div class="content">
   <div class="text-box">
-    <h1>Selamat Ulang Tahun!</h1>
-    <p>Ini adalah halaman spesial dengan efek background fade yang elegan.</p>
+    <div class="header">
+      <img src="img/foto-dia.jpg" alt="Foto Dia">
+      <h1>Selamat Ulang Tahun, Ais!</h1>
+    </div>
+    <div class="paragraph">
+      <p>
+        Semoga di hari spesial ini kamu selalu diberikan kebahagiaan yang tiada habisnya.
+        Terima kasih sudah menjadi bagian yang indah dalam hidup ini. Semoga semua impianmu
+        tercapai dan harimu dipenuhi dengan cinta dan tawa. Tetap menjadi kamu yang luar biasa, ya!
+        Selamat ulang tahun sekali lagi!
+      </p>
+    </div>
   </div>
 </div>
 
-  <div class="spacer"></div>
+<div class="spacer"></div>
 </body>
 </html>
