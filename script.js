@@ -15,8 +15,15 @@ function ikutMerayakan() {
   const nama = document.getElementById("namaInput").value.trim();
   if (nama === "") return alert("Nama tidak boleh kosong!");
 
-  db.ref("ucapan").push(nama);
-  document.getElementById("namaInput").value = "";
+  db.ref("ucapan").push(nama, (error) => {
+    if (!error) {
+      window.location.href = "abouther.html"; // redirect setelah sukses input
+    } else {
+      alert("Gagal menyimpan, coba lagi!");
+    }
+  });
+
+  // Tidak perlu reset input kalau langsung redirect
 }
 
 const total = document.getElementById("totalUcapan");
